@@ -1,0 +1,1295 @@
+/* For PC, スマホ共通 */
+body {
+  font-family: "Source Sans Pro, Hiragino kaku Gothic proN", Meiryo, Arial, sans-serif";
+}
+
+p {
+  font-size: 15px;
+}
+
+/* ========
+   For PC ↓↓↓↓
+==========*/
+/* MEDIA クエリ 768px以上に適用*/
+@media screen and (min-width: 768px) {
+/* 機種設定 */
+body {
+  /* 画面幅最大・最小 */
+  max-width: 1080px; 
+  min-width: 960px;
+  /* 最大値1080pxを超えたら、左右をautoで中央ぞろえ */
+  margin: 0 auto 0 auto;
+}
+
+/* HEADER LAYOUT */
+header {
+  /* Flexアイテムの配置位置
+  子要素であるロゴやナビゲーションを横並びに */
+  display: flex;
+  /* flrxアイテムの開始・終了位置を起点に均等に配置 */
+  /* よって、左よせにロゴ、右寄せにnav */
+  justify-content: space-between;
+  max-width: 980px;
+  margin: 0 auto 0 auto;
+}
+
+/* NAVIGATION LAYOUT */
+#nav-pc {
+  /* 子要素を右よせ */
+  text-align: right;
+  font-size: 14px;
+  padding-top: 15px;
+}
+
+/* NAVIGATION LINK DECO */
+/* ID:nc-pcの直下の子要素を装飾 */
+#nav-pc > a {
+  /* 下線を無効 */
+  text-decoration: none;
+  margin-left: 20px;
+}
+/* リンクを黒に統一 */
+/* Pseudo Class */
+#nav-pc > a:link {
+  color: #0d0d0d;
+}
+#nav-pc > a:visited {
+  color: #0d0d0d;
+}
+#nav-pc > a:hover {
+  color: #0d0d0d;
+  /* hover時に下線表示 */
+  text-decoration: underline;
+}
+#nav-pc > a:active {
+  color: #0d0d0d;
+}
+
+  /* スマホ用ナビを非表示 (navとハンバーガーmenu)*/
+  #nav-sp,
+  #menu-sp {
+    display: none;
+  }
+
+/* MAIN VISUALのmsgとimgを絶対位置固定(absolute)にするため
+親要素をrelativeで設定 */
+#main-visual {
+  position: relative;
+  height: 400px;
+}
+
+/* MAIN MESSAGE */
+#main-message {
+  /* 親要素基準で絶対位置に配置 */
+  position: absolute;
+  /* 親要素からの距離 */
+  top: 0;
+  left: 0;
+  background-color: #2710d5;
+  /* 文字色 */
+  color: #ffffff;
+  /* 丸み　左上から時計回り */
+  border-radius: 0 0 476px 0;
+  /* 最大幅 */
+  max-width: 620px;
+  /* 幅と高さ100%=要素のサイズに合わせて広げる */
+  height: 100%;
+  width: 100%;
+  /* 重なり順番　imgを10にその上にmsg11 */
+  z-index: 11;
+}
+
+/* MAIN MESSAGE　文字装飾 */
+#main-message > h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 100px 0px 0 50px;
+}
+#main-message > p {
+  font-size: 28px;
+  margin: 0 0 0 50px;
+}
+
+/* imgを装飾 */
+#main-visual > img {
+  max-width: 620px;
+  /* 左上を丸く */
+  border-radius: 476px 0 0 0;
+  position: absolute;
+  /* 右上に固定 */
+  top: 0;
+  right: 0;
+  /* 画像が下になるように10, msg=11 */
+  z-index: 10;
+}
+
+/* 見出し */
+h2 {
+  margin: 40px 0 0 0;
+}
+h2::after {
+  /* 疑似要素 ::after content: url("")で画像追記*/
+  content: url("images/line.png");  
+  margin-left: 10px;
+}
+h3 {
+  font-size: 27px;
+}
+
+/*========== 
+  MISSION
+  ==========*/
+#mission {
+  /* 左右は中央寄せ */
+  margin: 80px auto 80px auto;
+  /* 親要素を幅いっぱいに広げる */
+  width: 100%;
+}
+#mission-flex {
+  /* 親要素の幅いっぱい */
+  width: 100%;
+  /* mission-flexの子要素を横並べ */
+  display: flex;
+}
+/* div flex２つの要素を半分に区切る */
+#mission-flex > div {
+  width: 50%;
+  margin: 20px;
+}
+/* 左側img */
+#mission-photo {
+  width: 100%;
+}
+/* 右側img */
+#s2dgs {
+  margin-top: 50px;
+}
+
+
+/*========== 
+  PRODUCT 
+  ==========*/
+/* プロダクト全体 */
+#product {
+  background-color: #fafafa;
+  width: 100%;
+  margin: 80px 0 80px 0;
+  padding: 10px 40px 0px 40px;
+}
+/* ４つのコンテナをグループ化 */
+#product > div {
+  margin-top: 40px;
+  display: flex;
+}
+/* 左右のカラムにグループ化 */
+/* 左 */
+#product-left {
+  /* 2つのdivを半分に分ける */
+  width: 50%;
+  /* 右側に余白 */
+  margin-right: 20px;
+}
+/* 右　 */
+#product-right {
+  width: 50%;
+  /* 左側と上に余白 */
+  margin-left :20px;
+  margin-top: 80px;
+}
+/* 左のコンテナ２つ */
+#product-left > div {
+  /* 子要素の画像やテキストにabsolute指定するための指定 */
+  position: relative; 
+  height: 480px;
+  margin-right: 20px ;
+}
+/* 右のコンテナ２つ */
+#product-right > div {
+  /* 子要素の画像やテキストにabsolute指定するための指定 */
+  position: relative; 
+  height: 480px;
+  margin-left: 20px ;
+}
+
+/* 見出しと説明文をグループ化 */
+.product-explain {
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 280px;
+  margin: 0 40px;
+  padding: 20px;
+  /* 右方向の長さ、影の下方向の長さ、影のぼけ具合、影の色 */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+/* 英語のみだし */
+.product-explain > span {
+  color: #2710d5;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+/* 見出し */
+.product-explain > h3 {
+  margin: 5px 0 5px 0;
+}
+/* 説明文 */
+.product-explain > p {
+  margin: 0;
+}
+/* もっとみる */
+#product-more {
+  /* 下に-42pxで外にはみ出させる, 左右中央 */
+  /* ↑→↓← */
+  margin: 0 auto -42px auto;
+}
+
+/*========== 
+  ABOUT US TABLE
+  ==========*/
+#aboutus {
+  margin: 80px auto;
+}
+/* 表と１枚目の画像をグループ化 */
+#aboutus > div {
+  display: flex;
+}
+/* img layout */
+.culture-img {
+  width: 100%;
+  /* 縦方向の揃え方 */
+  align-self: flex-start;
+}
+.culture-img2 {
+  margin-top: 50px;
+  width: 100%;
+}
+
+/* 表全体 */
+.culture-table {
+  /* 広がりすぎ防止 */
+  max-width: 500px;
+  margin-right: 50px;
+}
+/* 表のセルたち */
+.culture-num {
+  font-size: 80px;
+  color: #2710d5;
+  margin-right: 20px;
+  /* margin: 0 20px 0 0 */
+}
+/* 英語見出し */
+.culture-en {
+  color: #2710d5;
+  font-weight: bold;
+  font-size: 24px;
+  /* 縦に並べる にしたら次のデータ"日本語"が↓に並ぶ*/
+  display: block;
+}
+/* 日本語見出し */
+.culture-jp {
+  font-size: 28px;
+  font-weight: bold;
+}
+.culture-description {
+  margin: 0;
+}
+
+/*========== 
+  VISION
+  ==========*/
+  #vision {
+    margin: 80px auto;
+  }
+  /* 行動指針 */
+  #vision > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  /* 各行動指針をグループ化 */
+  .vision-box {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    /* 子要素である画像やテキストを絶対位置で配置できるようにする */
+    position: relative;
+  }
+
+  /* 行動指針の画像、テキストの装飾 */
+  .vision-box > img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* テキストが上に来るように設定 */
+    z-index: 30;
+  }
+  /* 見出しと説明文のspan要素 */
+  .vision-box > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 31;
+    margin-right: 20px;
+  }
+   /* 英語の見出し */
+  .vision-box > span > h4 {
+    color: #2710d5;
+    font-size: 24px;
+    margin: 80px 0 0 0;
+  }
+  /* 疑似クラスで最初の文字のみ装飾 */
+  .vision-box > span > h4::first-letter {
+    font-size: 40px;
+  }
+  /* 日本語見出し */
+  .vision-box > span > h5 {
+    font-size: 20px;
+    margin: 0;
+  }
+  /* 説明文 */
+  .vision-box > span > p {
+    margin-top: 10px;
+  }
+ 
+/*========== 
+  COMPANY
+  ==========*/
+  #company {
+    margin: 80px auto 80px auto;
+  }
+  /* TABLE */
+  #company-table {
+    width: 100%;
+  }
+  /* ２行目以降の見出し */
+  .tableheader {
+    /* 文字位置 */
+    text-align: left;
+    padding: 20px;
+    /* 下の枠線 */
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 100px;
+  }
+  /* 1行目の見出し */
+  .tableheader-first {
+    text-align: left;
+    padding: 20px;
+    /* 下の枠線 */
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 100px;
+    /* 上の枠線 */
+    border-top-color: #2710d5;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  /* セル */
+  .cell {
+    padding: 30px;
+    /* 下の枠線 */
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .cell-first {
+    padding: 30px;
+    /* 下の枠線 */
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    /* 上の枠線 */
+    border-top-color: #ececec;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+/* 地図 */
+#company > iframe {
+  width: 100%;
+  height: 368px;
+  margin-top: 40px;
+}
+/*========== 
+  CONTACT
+  ==========*/
+#contact {
+  margin: 80px auto;
+}
+/* 各フォームをグループ化 */
+#contact > form > div {
+  /* flexboxを使用するためflex指定 */
+  /* form の各直下の divのみ*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+/* ラベル */
+.contact-heading {
+  width: 240px;
+  align-self: center;
+}
+/* 項目名 */
+.contact-label {
+  font-weight: bold;
+}
+/* 必須 */
+.contact-span {
+  color: #ce2222;
+  margin-left: 20px;
+  font-weight: bold;
+}
+/* テキストボックス　入力してください */
+.contact-textbox {
+  /* 枠　0 = 非表示 */
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #707070;
+  border-bottom-style: solid;
+  background-color: #fafafa;
+  width: 400px;
+  height: 56px;
+}
+/* textarea */
+.contact-textarea {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #707070;
+  border-bottom-style: solid;
+  background-color: #fafafa;
+  width: 400px;
+  height: 200px;
+}
+/* 非表示にしたdetails */
+details {
+  width: 700px;
+}
+details > div {
+  background-color: #fafafa;
+  padding: 20px;
+}
+details > div > span {
+  font-weight: bold;
+}
+
+/*========== 
+  FOOTER
+  ==========*/
+  footer {
+    background-color: black;
+    text-align: center;
+    padding: 80px 80px 30px 80px;
+  }
+  #footer-logo {
+    margin-bottom: 30px;
+  }
+  /* Linkをグループ化 */
+  #footer-link {
+    margin-bottom: 50px;
+  }
+  /* Linkの装飾 */
+  #footer-link > a {
+    /* 下線を非表示 */
+    text-decoration: none;
+    margin: 10px;
+  }
+  #footer-link a:link {
+    color: #ffffff;
+  }
+  #footer-link a:visited {
+    color: #ffffff;
+  }
+  #footer-link a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  #footer-link a:active {
+    color: #fff;
+  }
+/* SNSボタン　copyright */
+#sns-footer {
+  /* SNSアイコンは左寄せ */
+  text-align: left;
+  width: 100%;
+}
+#sns-footer > a {
+  margin: 30px;
+}
+/* copyright含むspanを右寄せ */
+#copyright {
+  color: #ffff;
+  /* 要素の並びをFooter内で右寄せ */
+  /* div要素内のspan（disply:inline）は親要素=divに対してtext-alignなどで
+  　　右寄せする */
+  /* display:block の場合、margin-right:0; margin-left: 0;で右寄せ可能*/
+  float: right;
+} 
+
+
+/* ***********
+  MISSION HTML PAGE
+************* */
+#mission-main {
+  /* 画像よりも背景を高くし、背景画像を中央によせる */
+  height: 496px;
+  width: 100%;
+  background-image: url("images/mission/mission-main.png");
+  background-repeat: no-repeat;
+  /* 縦方向の中央に配置する */
+  background-position-y: center;
+}
+#mission-title {
+  background-color: #2710d5;
+  width: 368px;
+  color: #fff;
+  height: 496px;
+  border-radius: 0 248px 248px 0;
+  position: relative;
+}
+/* 英語見出し */
+#mission-title > h1 {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  font-size: 80px;
+}
+/* カタカナ見出し */
+#mission-title > span {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  font-size: 26px;
+}
+/* ぱんくずリスト */
+#mission-title > div {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  font-size: 16px;
+}
+#mission-s2dgs {
+  width: 100%;
+  margin: 20px;
+}
+.mission-h2 {
+  color: #2710d5;
+  font-size: 40px;
+}
+.mission-h2::after {
+  /* デザイン上作成した部分をnoneで削除 */
+  content: none;
+}
+#mission-5goals {
+  margin: 20px;
+  display: flex;
+}
+#mission-5goals > img {
+  width: 100%;
+}
+
+#mission-5goals > div {
+  /* 子要素をどれくらいのびるか、コンテナ（親要素）の幅いっぱいに引き延ばす */
+  flex-grow: 1;
+  padding: 20px;
+}
+#mission-5goals > div > div {
+  margin-bottom: 40px;
+}
+.fivegoals-image-right {
+  float: right;
+  margin: 20px;
+}
+.fivegoals-image-left {
+  float: left;
+  margin: 20px;
+}
+.fivegoals-number {
+  color: #2710d5;
+  font-size: 48px;
+  margin: 0;
+}
+.fivegoals-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+.fivegoals-p {
+  margin: 0;
+}
+
+/* ***********
+  PRODUCT HTML PAGE
+************* */
+#product-main {
+  height: 496px;
+  width: 100%;
+  background-image: url("images/product/product-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+#product-title {
+  background-color: #2710d5;
+  width: 368px;
+  color: #fff;
+  height: 496px;
+  border-radius: 0 248px 248px 0;
+  position: relative;
+}
+/* 英語見出し */
+#product-title > h1 {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  font-size: 80px;
+}
+/* カタカナ見出し */
+#product-title > span {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  font-size: 26px;
+}
+#product-title > div {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  font-size: 16px;
+}
+
+/* SECTION 1  */
+.product-section1 {
+  position: relative;
+  margin: 20px;
+  height: 340px;
+}
+/* imgが左 */
+.product-section1 > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  margin: 0 40px 30px 0;
+  border-radius: 0 432px 0 0;
+}
+.product-section1 > div {
+  position: absolute;
+  top: 0;
+  left: 480px;
+}
+.product-section2 {
+  position: relative;
+  margin: 20px;
+  height: 340px;
+}
+/* imgが右 */
+.product-section2 > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px;
+  margin: 0 0 30px 40px;
+  border-radius: 432px 0 0 0;
+}
+.product-section2 > div {
+  width: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* 英語見出し */
+.product-h2 {
+  color: #2710d5;
+  font-size: 24px;
+  margin: 0;
+}
+/* 日本語見出し */
+.product-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+
+
+
+
+}
+
+
+
+
+
+
+/*========== 
+  スマホ用のスタイル
+  ==========*/
+  @media screen and (max-width: 767px) {
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+  /* PC用ナビを非表示 */
+  #nav-pc {
+    display: none;
+  }
+  /* ハンバーガーメニュー */
+  #menu-sp {
+    float: right;
+    padding: 0;
+  }
+  #nav-sp {
+    background-color: #2710d5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+  }
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #logo-sp {
+    margin: 80px 0 30px 20px;
+  }
+  /* navi link　→画像 */
+  #nav-sp > a {
+    display: block;
+  }
+  #nav-sp > a:link {
+    color: #fff;
+  }
+  #nav-sp > a:visited {
+    color: #fff;
+  }
+  #nav-sp > a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  #nav-sp > a:avtive {
+    color: #fff;
+  }
+  /* navi link background img*/
+  #nav-sp > .menu {
+    text-decoration: none;
+    display: block;
+    margin: 0 20px 0 20px;
+    height: 44px;
+    font-size: 16px;
+    /* 画像を背景として表示 */
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    /* 右上指定 */
+    background-position: right top;
+  }
+  /* SNS　ボタン */
+  #sns {
+    /* 左下基準 */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  #sns > a {
+    margin-right: 30px;
+  }
+
+  /* MAIN レシポンシブ対応 */
+#main-visual {
+  position: relative;
+  height: 470px;
+  width: 100%;
+  /* はみ出た画像部分をカット or visible */
+  overflow: hidden;
+}
+#main-visual > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #2710d5;
+  border-radius: 0 0 476px 0;
+  text-align: center;
+  height: 280px;
+  width: 100%;
+  z-index: 11;
+}
+#main-visual > div > h1 {
+  font-size: 28px;
+  margin-top: 90px;
+}
+#main-visual > div > p {
+  margin: 0;
+}
+#main-visual > img {
+  width: 100%;
+  border-radius: 476px 0 0 0;
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* 見出し　共通適用 */
+h2::after {
+  content: url("images/line.png");
+  margin-left: 10px;
+}
+h3 {
+  font-size: 24px;
+  margin: 10px 0 0 0;
+}
+/* MISSION section 全体 */
+#mission {
+  margin: 20px;
+}
+/* 画像部分 */
+#mission-photo,
+#s2dgs {
+  width: 100%;
+}
+/* PRODUCT section */
+#product {
+  background-position: #fafafa;
+  margin-top: 10px;
+}
+#product h2 {
+  margin: 20px;
+}
+#product-left,
+#product-right {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* 各コンテンツ */
+#product-left > div,
+#product-right > div {
+  position: relative;
+  height: 540px;
+}
+/* 見出し、説明文 */
+.product-explain {
+  background-color: #fff;
+  /* 左下 */
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  padding: 20px;
+  /* →、↓、ぼやけ具合、全体拡大 */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+}
+.product-explain > span {
+  color: #2710d5;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.product-explain > h3 {
+  margin: 10px 0;
+}
+/* 画像編集 */
+.product-photo {
+  width: 100%;
+}
+/* もっとみるボタン */
+#product-more > img {
+  margin-bottom: -42px;
+  margin-left: 20px;
+}
+
+/* ABOUT section */
+#aboutus {
+  margin: 80px 20px;
+}
+/* 表と１枚目の画像をグループ化 */
+#aboutus > div {
+  /* flexboxを指定するため */
+  display: flex;
+  flex-direction: column;
+}
+.culture-table {
+  width: 100%;
+  padding-right: 20px;
+  order: 2;
+}
+.culture-img {
+  width: 100%;
+  order: 1;
+}
+.culture-img2 {
+  width: 100%;
+}
+/* 番号、見出し、説明文 */
+.culture-num {
+  font-size: 80px;
+  color: #2710d5;
+}
+.culture-en {
+  color: #2710d5;
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+}
+.culture-jp {
+  display: block;
+}
+.culture-description {
+  margin: 0;
+}
+/* VISION section */
+#vision {
+  margin: 80px 20px;
+}
+/* 行動指針 */
+.vision-box {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.vision-box > img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+/*見出し、説明文 */
+.vision-box > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 31;
+  margin-right: 20px;
+}
+.vision-box > span > h4 {
+  color: #2710d5;
+  font-size: 24px;
+  margin-top: 60px;
+}
+.vision-box > span > h5 {
+  font-size: 20px;
+  margin: 0;
+}
+.vision-box > span > p {
+  margin-top: 10px;
+}
+/* COMPANY section */
+#company {
+  margin: 0 20px;
+}
+#company > h3 {
+  margin-bottom: 20px;
+}
+/* TABLE 装飾 */
+#company > table {
+  width: 100%;
+}
+.tableheader-first {
+  text-align: left;
+  padding: 20px;
+  border-bottom-color: #2710d5;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-top-color: #2710d5;
+  border-top-width: 1px;
+  border-top-style: solid;
+  width: 50px;
+}
+.tableheader {
+  text-align: left;
+  padding: 20px;
+  /* 下の枠線 */
+  border-bottom-color: #2710d5;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 50px;
+}
+.cell {
+  padding: 20px;
+  border-bottom-color: #ececec;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.cell-first {
+  padding: 20px;
+  border-bottom-color: #ececec;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-top-color: #ececec;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+#company > iframe {
+  width: 100%;
+  height: 240px;
+  margin-top: 40px;
+}
+/* CONTACT section */
+#contact {
+  margin: 80px 20px;
+}
+#contact > h3 {
+  margin-bottom: 20px;
+}
+#contact > form > div {
+  margin-bottom: 20px;
+}
+.contact-heading {
+  margin-bottom: 20px;
+}
+.contact-label {
+  font-weight: bold;
+}
+/* 必須 */
+.contact-span {
+  color: #ce2222;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.contact-textbox {
+  height: 56px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #fafafa;
+  border-bottom-color: #707070;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  min-width: 300px;
+  width: 100%;
+}
+.contact-textarea {
+  height: 150px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #fafafa;
+  width: 100%;
+}
+.radiobutton {
+  margin-bottom: 20px;
+}
+
+/* 隣接するlabel要素（「お電話」「メール」「どちらでも」）の直後（疑似要素::after） */
+.radiobutton + label::after {
+  content: "\A";
+  white-space: pre;
+}
+/* FOOTER */
+footer {
+  background-color: #0d0d0d;
+  padding: 30px 20px 50px 20px;
+}
+#footer-logo {
+  margin-bottom: 30px; 
+}
+#footer-link > a {
+  text-decoration: none;
+  margin: 0 20px 30px 0;
+  display: block;
+  background-image: url("images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right top ;
+}
+#footer-link > a:link {
+  color: #ffff;
+}
+#footer-link > a:visited {
+  color: #ffff;
+}
+#footer-link > a:hover {
+  color: #ffff;
+  text-decoration: underline;
+}
+#footer-link > a:active {
+  color: #ffff;
+}
+
+/* SNS copyright */
+#sns-footer {
+  display: block;
+  width: 100%;
+}
+#sns-footer > a {
+  margin-right: 30px;
+}
+#copyright {
+  font-size: 12px;
+  display: block;
+  margin-top: 30px;
+  color: #ffff;
+}
+/* ***********
+  MISSION HTML PAGE
+************* */
+#mission-main {
+  /* 画像よりも背景を高くし、背景画像を中央によせる */
+  height: 256px;
+  width: 100%;
+  background-image: url("images/mission/mission-main.png");
+  background-repeat: no-repeat;
+  /* 縦方向の中央に配置する */
+  background-position-y: center;
+  background-size: auto 208px;
+}
+#mission-title {
+  width: 136px;
+  background-color: #2710d5;
+  color: #fff;
+  height: 256px;
+  border-radius: 0 248px 248px 0;
+  position: relative;
+}
+#mission-title > h1 {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 40px;
+}
+#mission-title > span {
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  font-size: 18px;
+}
+#mission-title > div {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  font-size: 13px;
+}
+/* SDGs section */
+#mission-s2dgs {
+  margin: 20px;
+}
+.mission-h2 {
+  color: #2710d5;
+  font-size: 38px;
+  margin: 0px;
+}
+.mission-h2::after {
+  content: none;
+}
+#mission-s2dgs >img {
+  width: 100%;
+}
+/* 5goalsの説明文 */
+#mission-5goals {
+  margin: 20px;
+}
+/* PCでは左に表示される画像 */
+#s2dgs-image {
+  width: 100%;
+}
+各コンテンツグループ化する要素
+#mission-5goals > div > div {
+  margin-bottom: 40px;
+}
+.fivegoals-image-right {
+  margin: 20px auto;
+  display: block;
+}
+.fivegoals-image-left {
+  margin: 20px auto;
+  display: block;
+}
+.fivegoals-number {
+  color: #2710d5;
+  font-size: 48px;
+  margin: 0px;
+}
+.fivegoals-h3 {
+  font-size: 28px;
+  margin: 0px;
+}
+.fivegoals-p {
+  margin: 0px;
+}
+
+
+
+/* ***********
+  PRODUCT HTML PAGE
+************* */
+#product-main {
+  height: 256px;
+  width: 100%;
+  background-image: url("images/product/product-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  /* !!!!!!!!!!!上下にauto、左右に208px!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  background-size: auto 208px;
+}
+#product-title {
+  background-color: #2710d5;
+  width: 136px;
+  color: #fff;
+  height: 256px;
+  border-radius: - 248px 248px 0;
+  position: relative;
+}
+#product-title > h1 {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 40px;
+}
+/* カタカナ見出し */
+#product-title > span {
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  font-size: 18px;
+}
+/* ぱんくずリスト */
+#product-title > div {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  font-size: 13px;
+}
+
+/* MAIN */
+.product-section1 {
+  margin: 20px;
+}
+/* imgが左 */
+.product-section1 >img {
+  width: 100%;
+  border-radius: 0 300px 0 0;
+}
+.product-section2 {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+/* imgが右 */
+.product-section2 > img {
+  /* テキストの前に配置 */
+  order: 1;
+  width: 100%;
+  border-radius: 300px 0 0 0;
+}
+.product-section2 > div {
+  order: 2;
+}
+.product-h2 {
+  color: #2710d5;
+  font-size: 24px;
+  margin: 0;
+}
+.product-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+
+}
